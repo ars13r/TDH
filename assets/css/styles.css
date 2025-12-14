@@ -29,12 +29,12 @@ body {
 }
 
 .header-layout {
-  position: relative;             /* NEW */
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
 }
+
 
 
 /* LEFT */
@@ -56,11 +56,9 @@ body {
 
 /* CENTER: this is what centers the menus */
 .header-center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);  /* true center of the header bar */
+  display: flex;
 }
+
 
 .header-center .main-nav {
   display: flex;
