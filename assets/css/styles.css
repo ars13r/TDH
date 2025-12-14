@@ -119,13 +119,20 @@ body {
     align-items: flex-start;
   }
 
-  /* KEY FIX: stop absolute-centering on mobile */
+@media (max-width: 640px) {
+  .header-layout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* KEY FIX */
   .header-center {
     position: static;
-    transform: none;
     left: auto;
     top: auto;
+    transform: none;
     width: 100%;
+    margin-top: 0.5rem;
   }
 
   .header-center .main-nav {
@@ -136,15 +143,15 @@ body {
   }
 
   .header-right {
-    width: 100%;
     align-items: flex-start;
+    width: 100%;
   }
 
   .header-actions {
-    width: 100%;
     align-items: flex-start;
-    gap: 0.35rem;
   }
+}
+
 
   .header-cta {
     width: 100%;
@@ -342,4 +349,5 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 
