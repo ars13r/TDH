@@ -298,10 +298,18 @@ body {
 /* Two cards side by side for call/text + email */
 .contact-options {
   display: grid;
-  grid-template-columns: repeat(3, minmax(320px, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
+
+  /* responsive grid that wraps naturally */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
+@media (max-width: 640px) {
+  .contact-card {
+    padding: 1.25rem;
+  }
+}
+
 
 .contact-card {
   background: #ffffff;
@@ -349,5 +357,6 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 
 
