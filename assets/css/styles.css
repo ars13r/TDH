@@ -82,8 +82,8 @@ body {
 
 .header-actions {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: center;
   gap: 0.15rem;
 }
 
@@ -91,20 +91,34 @@ body {
   font-size: 0.95rem;
 }
 
-.header-phone-text {
-  font-size: 0.85rem;
+.header-phone-banner {
+  background: #0b1220;            /* slightly different from header */
+  border-bottom: 1px solid #1f2933;
+  padding: 0.35rem 0;
+}
+
+.header-phone-banner .container {
+  display: flex;
+  justify-content: center;       /* right aligned like you want */
+}
+
+.header-phone-banner .header-phone-text {
+  font-size: 1.3rem;
   color: #e5e7eb;
 }
 
-.header-phone-text a {
+.header-phone-banner .header-phone-text a {
   color: #f9fafb;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
+  margin-left: 0.35rem;
 }
 
-.header-phone-text a:hover {
+.header-phone-banner .header-phone-text a:hover {
   text-decoration: underline;
 }
+
+
 
 
 /* Mobile tweak so it doesn’t get cramped */
@@ -119,20 +133,13 @@ body {
     align-items: flex-start;
   }
 
-@media (max-width: 640px) {
-  .header-layout {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  /* KEY FIX */
+  /* KEY FIX: stop absolute-centering on mobile */
   .header-center {
     position: static;
+    transform: none;
     left: auto;
     top: auto;
-    transform: none;
     width: 100%;
-    margin-top: 0.5rem;
   }
 
   .header-center .main-nav {
@@ -143,15 +150,15 @@ body {
   }
 
   .header-right {
-    align-items: flex-start;
     width: 100%;
+    align-items: flex-start;
   }
 
   .header-actions {
+    width: 100%;
     align-items: flex-start;
+    gap: 0.35rem;
   }
-}
-
 
   .header-cta {
     width: 100%;
@@ -167,7 +174,11 @@ body {
 /* Buttons */
 
 .btn-primary {
-  display: inline-block;
+  display: inline-flex;          /* switch from inline-block */
+  align-items: center;           /* vertical centering */
+  justify-content: center;       /* horizontal centering */
+  white-space: nowrap;           /* keep text on one line */
+
   padding: 0.6rem 1.3rem;
   background: #2563eb;
   color: #f9fafb;
@@ -178,6 +189,7 @@ body {
   cursor: pointer;
   font-size: 0.95rem;
 }
+
 
 .btn-primary:hover {
   filter: brightness(0.9);
@@ -298,9 +310,9 @@ body {
 /* Two cards side by side for call/text + email */
 .contact-options {
   display: grid;
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .contact-card {
@@ -310,17 +322,6 @@ body {
   box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
   border: 1px solid #e5e7eb;
 }
-
-@media (max-width: 640px) {
-  .contact-options {
-    grid-template-columns: 1fr; /* forces 1 column on phones */
-  }
-
-  .contact-card {
-    padding: 1.25rem;
-  }
-}
-
 
 .contact-card h2 {
   margin-bottom: 0.5rem;
@@ -360,7 +361,4 @@ img {
   max-width: 100%;
   height: auto;
 }
-
-
-
 
