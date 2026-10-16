@@ -1,0 +1,168 @@
+/* ===== Guaran-DOG-teed section =====
+   Linkable at: https://thedependablehandyman.com/#guarantee */
+
+:root {
+  --dg-blue: #0c3c72;
+  --dg-blue-deep: #082c56;
+  --dg-yellow: #ffc425;
+  --dg-white: #ffffff;
+  --dg-mist: #c9d6e8;
+}
+
+/* Smooth jump when someone lands on /#guarantee (skipped if they prefer less motion) */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+.dog-guarantee {
+  /* Keeps the heading from hiding under a sticky header when the link is opened.
+     Raise this number if your header is taller. */
+  scroll-margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--dg-blue);
+  color: var(--dg-white);
+  padding: 4rem 0 0;
+}
+
+/* Faint paw prints in the background, like the flyer */
+.dog-guarantee::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='%23ffffff' fill-opacity='0.06' transform='translate(110 20) rotate(15)'%3E%3Cellipse cx='20' cy='30' rx='13' ry='11'/%3E%3Ccircle cx='6' cy='14' r='5'/%3E%3Ccircle cx='16' cy='6' r='5'/%3E%3Ccircle cx='27' cy='7' r='5'/%3E%3Ccircle cx='35' cy='16' r='5'/%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='0.05' transform='translate(20 100) rotate(-20)'%3E%3Cellipse cx='20' cy='30' rx='13' ry='11'/%3E%3Ccircle cx='6' cy='14' r='5'/%3E%3Ccircle cx='16' cy='6' r='5'/%3E%3Ccircle cx='27' cy='7' r='5'/%3E%3Ccircle cx='35' cy='16' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.dog-guarantee .container { position: relative; }
+
+.dg-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
+  align-items: end;
+}
+
+.dg-eyebrow {
+  margin: 0 0 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dg-mist);
+}
+
+.dg-lede {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: var(--dg-mist);
+}
+.dg-lede s { text-decoration-thickness: 2px; }
+
+.dg-title {
+  margin: 0 0 2rem;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  line-height: 1.1;
+  color: var(--dg-white);
+}
+
+.dg-pun {
+  display: block;
+  margin-top: 0.15em;
+  font-size: 1.35em;
+  letter-spacing: -0.02em;
+  color: var(--dg-yellow);
+}
+
+.dg-dog {
+  display: inline-block;
+  padding: 0 0.18em;
+  background: var(--dg-white);
+  color: var(--dg-blue);
+  border-radius: 0.18em;
+  transform: rotate(-3deg);
+}
+
+.dg-steps {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.dg-steps li {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.dg-paw {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--dg-yellow);
+  display: grid;
+  place-items: center;
+}
+.dg-paw svg { width: 1.5rem; height: 1.5rem; fill: var(--dg-blue); }
+
+.dg-steps strong {
+  display: block;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+.dg-steps span.dg-detail { color: var(--dg-mist); font-size: 1.05rem; }
+
+.dg-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.dg-btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  background: var(--dg-yellow);
+  color: var(--dg-blue);
+}
+.dg-btn-ghost {
+  background: transparent;
+  color: var(--dg-white);
+  box-shadow: inset 0 0 0 2px var(--dg-white);
+}
+.dg-btn:hover { filter: brightness(1.05); }
+.dg-btn:focus-visible { outline: 3px solid var(--dg-white); outline-offset: 3px; }
+
+.dg-art { align-self: end; text-align: center; }
+.dg-art img { width: 100%; max-width: 360px; height: auto; display: block; margin: 0 auto; }
+
+.dg-footer {
+  position: relative;
+  background: var(--dg-blue-deep);
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+.dg-tagline {
+  margin: 0 0 0.35rem;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+}
+.dg-fine { margin: 0; font-size: 0.9rem; color: var(--dg-mist); }
+
+@media (max-width: 760px) {
+  .dog-guarantee { padding-top: 3rem; }
+  .dg-layout { grid-template-columns: 1fr; }
+  .dg-art { order: -1; }
+  .dg-art img { max-width: 220px; }
+}
