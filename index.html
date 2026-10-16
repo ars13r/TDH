@@ -145,12 +145,12 @@
     </section>
 
     <!-- GUARAN-DOG-TEED FLYER  (link to it with: https://thedependablehandyman.com/#guarantee) -->
-    <section id="guarantee" class="section" style="scroll-margin-top: 1rem;">
+    <section class="section">
       <div class="container" style="text-align: center;">
-        <img src="assets/img/guarandogteed-flyer.jpg"
+        <img id="guarantee" src="assets/img/guarandogteed-flyer.jpg"
              alt="Our promise on every job: Satisfaction Guaran-DOG-teed. Not 100% satisfied? Just let us know. We come back out and fix the problem at no charge, and we donate $25 to a local animal shelter. Applies to workmanship issues reported within 30 days of service. Call or text (919) 410-7597."
-             width="1170" height="1463" loading="lazy"
-             style="display: block; width: 100%; max-width: 700px; height: auto; margin: 0 auto; border-radius: 12px;">
+             width="1170" height="1463"
+             style="display: block; width: 100%; max-width: 700px; height: auto; margin: 0 auto; border-radius: 12px; scroll-margin-top: 0;">
       </div>
     </section>
 
@@ -297,6 +297,20 @@
         zipResult.className = "zip-result zip-result-maybe";
       }
     });
+
+    // Keep the flyer at the top when someone arrives via /#guarantee.
+    // The reviews widget above it loads late and pushes it down, so re-snap
+    // to the flyer as the page settles, and stop once the visitor scrolls.
+    if (location.hash === "#guarantee") {
+      const flyer = document.getElementById("guarantee");
+      let userMoved = false;
+      ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (evt) {
+        window.addEventListener(evt, function () { userMoved = true; }, { once: true, passive: true });
+      });
+      const snap = function () { if (!userMoved) flyer.scrollIntoView({ block: "start" }); };
+      window.addEventListener("load", snap);
+      [500, 1200, 2500, 4000].forEach(function (ms) { setTimeout(snap, ms); });
+    }
   </script>
 </body>
 </html>
