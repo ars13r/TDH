@@ -226,9 +226,38 @@ body {
   border: 1px dashed #d1d5db;
 }
 
-.reviews-placeholder {
-  color: #6b7280;
-  font-size: 0.95rem;
+
+/* Plain-text reviews under the widget */
+.text-reviews {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.text-review {
+  margin: 0;
+  background: #ffffff;
+  border-radius: 0.85rem;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+}
+
+.text-review-stars {
+  margin: 0 0 0.5rem;
+  color: #f5b301;
+  letter-spacing: 0.1em;
+}
+
+.text-review blockquote {
+  margin: 0 0 0.75rem;
+  color: #1f2937;
+  line-height: 1.55;
+}
+
+.text-review figcaption {
+  font-size: 0.9rem;
+  color: #4b5563;
+  font-weight: 600;
 }
 
 /* Dropdowns */
@@ -362,3 +391,14 @@ img {
   height: auto;
 }
 
+
+.text-reviews-more {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.text-reviews-more a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
