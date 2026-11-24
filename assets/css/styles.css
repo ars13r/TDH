@@ -391,3 +391,14 @@ img {
   height: auto;
 }
 
+
+.text-reviews-more {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.text-reviews-more a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
